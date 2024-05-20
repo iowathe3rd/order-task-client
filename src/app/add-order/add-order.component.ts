@@ -6,6 +6,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {FormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
+import {OrderService} from "../../services/orders.service";
 
 @Component({
   selector: 'app-add-order',
@@ -19,7 +20,7 @@ export class AddOrderComponent {
   quantity: number = 0;
   unitPrice: number = 0;
 
-  constructor(private dialog: MatDialog) {}
+  constructor(private orderService: OrderService, private dialog: MatDialog) {}
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddOrderDialogComponent, {
@@ -31,8 +32,18 @@ export class AddOrderComponent {
       console.log('The dialog was closed');
     });
   }
+  addOrder(order: CreateOrderInput): void {
+    this.orderService.createOrder(order).subscribe(() => {
+      console.log('Order added successfully');
+    });
+  }
 
   onSubmit() {
-    console.log('Order submitted:', this.orderName, this.quantity, this.unitPrice);
+    const newOrder: CreateOrderInput = {
+      orderName: this.orderName,
+      quantity: this.quantity,
+      unitPrice: this.unitPrice
+    };
+    this.addOrder(newOrder);
   }
 }

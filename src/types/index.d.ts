@@ -4,3 +4,5 @@ declare interface Order {
   quantity: number;
   unitPrice: number;
 }
+
+declare interface CreateOrderInput extends Omit<Order, "id"> {}
