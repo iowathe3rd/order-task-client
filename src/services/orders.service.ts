@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Observable} from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import {environment} from "../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrderService {
-  private apiUrl = 'http://localhost:5154/api/orders'; // Замените на URL вашего API
+  private apiUrl = environment.apiUrl; // Замените на URL вашего API
 
   constructor(private http: HttpClient) { }
 
