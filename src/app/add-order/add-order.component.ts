@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import { MatDialog } from "@angular/material/dialog";
 import { AddOrderDialogComponent } from "../add-order-dialog/add-order-dialog.component";
 import {MatCardModule} from "@angular/material/card";
@@ -14,15 +14,12 @@ import {MatButtonModule} from "@angular/material/button";
   templateUrl: './add-order.component.html',
   styleUrl: './add-order.component.css'
 })
-export class AddOrderComponent implements OnInit {
+export class AddOrderComponent {
   orderName: string = "";
   quantity: number = 0;
   unitPrice: number = 0;
 
   constructor(private dialog: MatDialog) {}
-
-  ngOnInit(): void {
-  }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddOrderDialogComponent, {

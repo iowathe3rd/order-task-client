@@ -1,5 +1,9 @@
-<mat-card class="card-container">
-  <form class="container" (ngSubmit)="onSubmit()">
+<!-- Add a button for small screens to open the dialog -->
+<mat-card class="card-container mat-elevation-z3">
+  <button mat-raised-button color="primary" class="add-order-button" (click)="openDialog()">Add Order</button>
+
+  <!-- Add the form directly for larger screens -->
+  <form class="container add-order-form" (ngSubmit)="onSubmit()">
     <mat-form-field class="example-full-width">
       <mat-label>Order Name</mat-label>
       <input matInput placeholder="Order Name" [(ngModel)]="orderName" name="orderName" required>
@@ -12,8 +16,6 @@
       <mat-label>Unit Price</mat-label>
       <input matInput type="number" placeholder="Unit Price" [(ngModel)]="unitPrice" name="unitPrice" required>
     </mat-form-field>
-    <div class="button-container">
-      <button mat-raised-button color="primary" type="submit">Submit</button>
-    </div>
+    <button mat-raised-button color="primary" type="submit">Submit</button>
   </form>
 </mat-card>

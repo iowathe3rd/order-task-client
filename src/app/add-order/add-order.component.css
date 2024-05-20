@@ -7,25 +7,29 @@
 
 .card-container {
   padding: 15px;
-  margin: 20px;
   width: 100%;
   max-width: 500px;
 }
 
 .example-full-width {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
-.button-container {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
+.add-order-button {
+  display: none;
 }
 
-@media (max-width: 600px) {
-  .card-container {
-    padding: 10px;
-    margin: 10px;
+.add-order-form {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .add-order-button {
+    display: block;
+  }
+
+  .add-order-form {
+    display: none;
   }
 }
