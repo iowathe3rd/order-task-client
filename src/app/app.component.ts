@@ -1,14 +1,33 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {MatSlideToggle} from "@angular/material/slide-toggle";
+import {OrderService} from "../services/orders.service";
+import {ViewOrdersComponent} from "./view-orders/view-orders.component";
+import {AddOrderComponent} from "./add-order/add-order.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatSlideToggle],
+  imports: [
+    RouterOutlet,
+    ViewOrdersComponent,
+    AddOrderComponent
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'Orderly';
+
+  orders: Order[] = [];
+
+  constructor(private orderService: OrderService) { }
+
+  ngOnInit(): void {
+    this.getAllOrders();
+  }
+
+  getAllOrders(): void {
+    this.orderService.getAllOrders()
+      .subscribe(orders => this.orders = orders);
+  }
 }

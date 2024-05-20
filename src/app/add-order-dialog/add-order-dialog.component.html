@@ -1,0 +1,20 @@
+<mat-card class="dialog-container">
+  <form class="container" (ngSubmit)="onSubmit()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Order Name</mat-label>
+      <input matInput placeholder="Order Name" [(ngModel)]="orderName" name="orderName" required>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Quantity</mat-label>
+      <input matInput type="number" placeholder="Quantity" [(ngModel)]="quantity" name="quantity" required>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Unit Price</mat-label>
+      <input matInput type="number" placeholder="Unit Price" [(ngModel)]="unitPrice" name="unitPrice" required>
+    </mat-form-field>
+    <div class="button-container">
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+      <button mat-raised-button color="warn" (click)="onNoClick()">Cancel</button>
+    </div>
+  </form>
+</mat-card>

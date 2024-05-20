@@ -1,0 +1,29 @@
+<table mat-table [dataSource]="dataSource">
+
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Id </th>
+    <td mat-cell *matCellDef="let order"> {{ order.orderName }} </td>
+  </ng-container>
+  <ng-container matColumnDef="orderName">
+    <th mat-header-cell *matHeaderCellDef> Order Name </th>
+    <td mat-cell *matCellDef="let order"> {{ order.orderName }} </td>
+  </ng-container>
+  <ng-container matColumnDef="quantity">
+    <th mat-header-cell *matHeaderCellDef> Quantity </th>
+    <td mat-cell *matCellDef="let order"> {{ order.quantity }} </td>
+  </ng-container>
+  <ng-container matColumnDef="unitPrice">
+    <th mat-header-cell *matHeaderCellDef> Unit Price </th>
+    <td mat-cell *matCellDef="let order"> {{ order.unitPrice }} </td>
+  </ng-container>
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef> Actions </th>
+    <td mat-cell *matCellDef="let order">
+      <button mat-icon-button color="warn" (click)="deleteOrder(order)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

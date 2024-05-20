@@ -7,7 +7,7 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class OrderService {
-  private apiUrl = 'https://localhost:5154/orders'; // Замените на URL вашего API
+  private apiUrl = 'http://localhost:5154/api/orders'; // Замените на URL вашего API
 
   constructor(private http: HttpClient) { }
 

@@ -1,0 +1,23 @@
+.dialog-container {
+  padding: 15px;
+  margin: 20px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .dialog-container {
+    padding: 10px;
+    margin: 10px;
+  }
+}
