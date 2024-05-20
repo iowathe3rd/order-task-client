@@ -1,27 +1,78 @@
-# Orderly
+# Order management task - Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
+This is the frontend application for the Order Management System. It is built with Angular and Angular Material components.
 
-## Development server
+## Getting Started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Follow these steps to get the frontend application up and running on your local machine.
 
-## Code scaffolding
+### Prerequisites
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Node.js and npm installed on your machine.
+- Angular CLI installed globally (`npm install -g @angular/cli`).
 
-## Build
+### Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clone the frontend repository to your local machine:
 
-## Running unit tests
+```
+git clone <frontend_repository_url>
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Navigate to the root directory of the frontend project:
 
-## Running end-to-end tests
+```
+cd <frontend_project_directory>
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. Install dependencies:
 
-## Further help
+```
+npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Configuration
+
+If you need to change the API URL, you can modify it in the `environment.ts` file located in the `src/environments` directory.
+
+### Development Server
+
+To start the development server, run the following command:
+
+```
+ng serve
+```
+
+Navigate to `http://localhost:4200/` in your web browser to view the application.
+
+### Build
+
+To build the project, run the following command:
+
+```
+ng build
+```
+
+The build artifacts will be stored in the `dist/` directory.
+
+### Running Tests
+
+To execute unit tests via [Karma](https://karma-runner.github.io), run the following command:
+
+```
+ng test
+```
+
+To execute end-to-end tests via [Protractor](http://www.protractortest.org/), run the following command:
+
+```
+ng e2e
+```
+
+### Further Help
+
+To get more help on the Angular CLI or the frontend application in general, run:
+
+```
+ng help
+```
